@@ -65,11 +65,21 @@ COPYRIGHT   = "Copyright (c) 2004-2009 Per Cederberg. All rights reserved."
  */
 
 {
-    var _       = require('lodash');
+    //var _       = require('lodash');
     var util        = require('util');
     var COMMENTS = /--([^\n\r-]|-[^\n\r-])*(--|-?[\n\r])/g ;
     var DEFINITIONS = {}
     var MODULE = {}
+    
+    function merge_options(obj1,obj2){
+        var obj3 = {};
+        for (var attrname in obj1) { obj3[attrname] = obj1[attrname]; }
+        for (var attrname in obj2) { obj3[attrname] = obj2[attrname]; }
+        return obj3;
+    }
+    
+    
+    
     Array.prototype.clean = function(deleteValue,bool) {
         var ob = {};
       for (var i = 0; i < this.length; i++) {
@@ -77,8 +87,15 @@ COPYRIGHT   = "Copyright (c) 2004-2009 Per Cederberg. All rights reserved."
           this.splice(i, 1);
           i--;
         }
+        /*
         if(_.isObject(this[i])){
             _.merge(ob,this[i])
+        }
+        */
+        if(typeof this[i] === 'object'){
+         ob = merge_options(ob,this[i])
+          
+           //console.log( ob)
         }
         
       }
