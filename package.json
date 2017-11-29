@@ -1,0 +1,15 @@
+{
+  "name": "asn2json",
+  "description": "ASN.1 schema modlue to json",
+  "author": "Jeremy Ebert",
+  "version": "0.0.1",
+  "dependencies": {
+        "pegjs": "0.10.0",
+
+    },
+    "repository": {
+    "type": "git",
+    "url": "https://github.com/PrimeEuler/asn2json.git"
+   },
+   "keywords": [ "ASN1", "SMI", "SNMP", "MIB" ]
+}
