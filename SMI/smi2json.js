@@ -1,4 +1,4 @@
-var asn2json    = require("./asn2json");
+var asn2json    = require("../asn2json");
 var fs          = require('fs');
 var util        = require('util');
 var asn         = new asn2json()
@@ -9,7 +9,7 @@ var MIB = {
 };
 function smi2json(mib){
     try{
-        var schema = fs.readFileSync("./" + mib)
+        var schema = fs.readFileSync("./MIB/" + mib)
         var Module = asn.parse(schema)
         
         var ModuleName  = Object.keys(Module)[0];
@@ -24,7 +24,7 @@ function smi2json(mib){
          console.log(mib, util.inspect(e, false, 10, true))
     }
 }
-var RFC_BASE_MINIMUM = [
+var Modules = [
     //SNMPv1
     'RFC1155-SMI.mib',
     'RFC1158-MIB.mib',
@@ -75,5 +75,5 @@ var RFC_BASE_MINIMUM = [
     //*/
     ].forEach( smi2json )
     
-fs.writeFileSync('./RFC_BASE_MINIMUM.json', JSON.stringify(MIB,null,4) )    
+fs.writeFileSync('./MIB.json', JSON.stringify(MIB,null,4) )    
 console.log( util.inspect(MIB, false, 10, true))
