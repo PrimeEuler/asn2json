@@ -1,2 +1,2 @@
 # asn2json
-ASN.1 schema parser
+Javascript ASN.1 schema parser with SMI extentions for SNMP MIB's
