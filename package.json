@@ -2,7 +2,7 @@
   "name": "asn2json",
   "description": "ASN.1 schema modlue to json",
   "author": "Jeremy Ebert",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "dependencies": {
         "pegjs": "0.10.0"
 
