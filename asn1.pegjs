@@ -378,7 +378,7 @@ OptionalOrDefaultElement = "OPTIONAL"
 ValueOrConstraintList = NamedNumberList
                       / ConstraintList ;
 
-NamedNumberList = "{" _ a:NamedNumber b:("," _ c:NamedNumber{return c})* _ "}"
+NamedNumberList = "{" _ a:NamedNumber b:(_"," _ c:NamedNumber{return c})* _ "}"
 {
     return [a].concat(b).clean(null,true)
 };

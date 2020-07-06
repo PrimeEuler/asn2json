@@ -10,9 +10,9 @@ var parser      = PEG.generate(grammar, { trace: false });
 function asn2json(){
     function parse(input){
         var COMMENTS    = /--([^\n\r-]|-[^\n\r-])*(--|-?[\n\r])/g ;
-        input = input.toString().replace(COMMENTS,"")
-        return parser.parse(input)[0]
+        input = input.toString().replace(COMMENTS,"");
+        return parser.parse(input)[0];
     }
-    this.parse = parse
+    this.parse = parse;
 }
-module.exports = asn2json
+module.exports = asn2json;
