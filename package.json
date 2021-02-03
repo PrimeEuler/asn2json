@@ -4,13 +4,17 @@
   "author": "Jeremy Ebert",
   "version": "0.0.2",
   "dependencies": {
-        "pegjs": "0.10.0"
-
-    },
-    "repository": {
+    "pegjs": "0.10.0"
+  },
+  "repository": {
     "type": "git",
     "url": "https://github.com/PrimeEuler/asn2json.git"
-   },
-   "keywords": [ "ASN1", "SMI", "SNMP", "MIB" ],
-   "license": "MIT"
+  },
+  "keywords": [
+    "ASN1",
+    "SMI",
+    "SNMP",
+    "MIB"
+  ],
+  "license": "MIT"
 }
